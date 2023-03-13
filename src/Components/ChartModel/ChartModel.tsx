@@ -1,14 +1,10 @@
 import Chart from "chart.js/auto";
 import React, {useEffect, useRef} from "react";
-import {ProjectModel} from "../../Model/ProjectModel";
 import "./ChartModel.css"
-import {color} from "chart.js/helpers";
+import {projectProps} from "../../Model/ProjectModel";
 
-type chartProps = {
-    project : ProjectModel
-    color : string
-}
-export const ChartModel : React.FC<chartProps> = (props) => {
+
+export const ChartModel : React.FC<projectProps> = (props) => {
 
     const chartRef = useRef<HTMLCanvasElement | null>(null);
     const chartInstanceRef = useRef<Chart | null>(null);
@@ -37,12 +33,11 @@ export const ChartModel : React.FC<chartProps> = (props) => {
                     });
                 }
             }
-        console.log('cc')
     } , [props.project]);
 
     return(
         <div className="chart-container">
-            <canvas ref={chartRef}  > </canvas>
+            <canvas ref={chartRef}> </canvas>
         </div>
     )
 }

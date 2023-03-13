@@ -1,18 +1,19 @@
+
 .chart-container{
     position: relative;
     margin: auto;
-    height: 10vh;
+    height: 20vh;
     width: 10vw;
+    transition : all 0.3s ease-in-out;
 }
 
 .chart-container:hover {
     position: relative;
     margin: auto;
-    
-    height: 20vh;
+    height: 40vh;
     width: 20vw;
 }
 
 canvas {
-    border: 1px solid red;
+    border: 1px solid #d3d3d3;
 }

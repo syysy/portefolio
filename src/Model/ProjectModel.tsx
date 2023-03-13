@@ -8,3 +8,8 @@ export class ProjectModel {
         this.language = language;
     }
 }
+
+export type projectProps = {
+    project : ProjectModel
+    color : string
+}
