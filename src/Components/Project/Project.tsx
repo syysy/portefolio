@@ -30,7 +30,7 @@ export const Project = () => {
             <nav className="flex space-x-2">
                 < Personnal setSelected = {setSelected}/>
                 {projects.map((project, index) => (
-                    <div key={index} className="py-2 px-4 cursor-pointer rounded shadow-md hover:shadow-lg "
+                    <div key={index} className="py-2 px-4 cursor-pointer  shadow-md hover:shadow-lg "
                         style={{ backgroundColor: listColor[index % listColor.length]}}
                         onClick={() => setSelected(index)}>
                         <h3 className="text-black">{project['name']}</h3>

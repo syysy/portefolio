@@ -6,7 +6,7 @@ type PersonnalProps = {
 
 export const Personnal : React.FC<PersonnalProps> = (props) => {
     return (
-        <div className="py-2 px-4 cursor-pointer rounded shadow-md hover:shadow-lg "
+        <div className="py-2 px-4 cursor-pointer shadow-md hover:shadow-lg "
              style={{ backgroundColor: "#77b5fe"}}
              onClick={() => props.setSelected(-1)}
         >
