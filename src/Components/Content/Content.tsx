@@ -19,9 +19,7 @@ export const Content : React.FC<projectProps> = (props) => {
                    })
                .catch(error => console.log(error));
        }
-       fetchReadMe().then(
-       );
-
+       fetchReadMe().then();
    }, [props.project])
 
     useEffect(() => {

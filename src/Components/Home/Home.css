@@ -1,0 +1,45 @@
+.content{
+
+    color : #1c1c1c;
+    display: flex;
+    align-items: center;
+}
+.name{
+    font-size: 70px;
+}
+
+.name:hover h1:first-child {
+    transform: translateX(-400px);
+    transition: all 0.5s ease-in-out;
+}
+.name h1:first-child {
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.name:hover h1:last-child {
+    transform: translateX(-400px);
+    transition: all 0.5s ease-in-out;
+}
+.name h1:last-child {
+    transition: transform 0.5s ease-in-out;
+}
+
+.name:hover::before {
+    content: "My content";
+    display: block;
+    opacity: 1;
+    transform: translateX(150px);
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.name::before {
+    content: "";
+    display: block;
+    height: 20px;
+    opacity: 0;
+
+}
