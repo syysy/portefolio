@@ -11,11 +11,11 @@ export const Project = () => {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            const response = await axios.get('https://api.github.com/users/syysy/repos')
+            const response = await axios.get('https://api.github.com/users/Mthieu44/repos')
             const projects = response.data;
             for (const project in projects){
                 projects[project] = new ProjectModel(projects[project]['name'], projects[project]['description'],projects[project]['language']);
-                const language = await axios.get('https://api.github.com/repos/syysy/'+ projects[project]['name'] +'/languages')
+                const language = await axios.get('https://api.github.com/repos/Mthieu44/'+ projects[project]['name'] +'/languages')
                 projects[project]['language'] = language.data
             }
             setProjects(projects);
