@@ -11,16 +11,18 @@ export const Project = () => {
 
     useEffect(() => {
         const fetchProjects = async () => {
-            const response = await axios.get('https://api.github.com/users/Mthieu44/repos')
+            const response = await axios.get('https://api.github.com/users/syysy/repos')
             const projects = response.data;
             for (const project in projects){
                 projects[project] = new ProjectModel(projects[project]['name'], projects[project]['description'],projects[project]['language']);
-                const language = await axios.get('https://api.github.com/repos/Mthieu44/'+ projects[project]['name'] +'/languages')
+                const language = await axios.get('https://api.github.com/repos/syysy/'+ projects[project]['name'] +'/languages')
                 projects[project]['language'] = language.data
             }
+            console.log(projects)
             setProjects(projects);
         }
         fetchProjects().then();
+        setSelected(0)
     }, []);
 
 
@@ -28,7 +30,7 @@ export const Project = () => {
     return (
         <div>
             <nav className="flex space-x-2">
-                < Personnal setSelected = {setSelected}/>
+                
                 {projects.map((project, index) => (
                     <div key={index} className="py-2 px-4 cursor-pointer  shadow-md hover:shadow-lg "
                         style={{ backgroundColor: listColor[index % listColor.length]}}
@@ -41,7 +43,6 @@ export const Project = () => {
                 <Content project={projects[selected]} color = { listColor[selected]} />
                  :
                 <div>
-                    <PersonnalContent />
                 </div>
             }
         </div>

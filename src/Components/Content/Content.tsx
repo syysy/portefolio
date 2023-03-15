@@ -9,7 +9,7 @@ export const Content : React.FC<projectProps> = (props) => {
    const [readMe, setReadMe] = useState<string>("");
    useEffect( () => {
        const fetchReadMe = async () => {
-           await fetch('https://api.github.com/repos/Mthieu44/' + props.project.name + '/readme')
+           await fetch('https://api.github.com/repos/syysy/' + props.project.name + '/readme')
                .then(res => res.json())
                .then(
                    data => {
@@ -28,11 +28,12 @@ export const Content : React.FC<projectProps> = (props) => {
         for (let i = 0; i < images.length; i++) {
             let imageUrl = images[i].getAttribute('src');
             if (!imageUrl?.startsWith('http')) {
-                imageUrl = 'https://raw.githubusercontent.com/Mthieu44/'+ props.project.name + '/master/'+imageUrl+''
+                imageUrl = 'https://raw.githubusercontent.com/syysy/'+ props.project.name + '/master/'+imageUrl+''
                 images[i].setAttribute('src', imageUrl);
             }
         }
     }, [readMe])
+    
     const html = marked(readMe);
     return (
         <div className="content" style={{backgroundColor : props.color}}>
